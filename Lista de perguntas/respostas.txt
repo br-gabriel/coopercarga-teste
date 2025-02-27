@@ -1,0 +1,22 @@
+1. O algoritmo retorna os primeiros 1000 números primos, organizados em linhas e colunas e divididos por paginação. Sendo no máximo 50 linhas e 4 colunas por página.
+
+2. Não. O código fere principalmente 3 conceitos do código limpo, que são: Legibilidade, pois os nomes das variáveis são genéricos e não especifica claramente pelo o que a variável é responsável. Simplicidade, o código possui estruturas complexas de loops gerando dificuldade de compreensão da lógica implementada. E, modularidade, um único bloco é responsável por toda a lógica do algoritmo.
+
+3. [arquivo upado no github - main.js]
+
+4. O middleware é um trecho de código intermediário que executa uma função e dá continuidade ao fluxo de uma requisição. Funções que podem ser utilizadas com frequência em várias rotas podem ser transformadas em middlewares. Por exemplo, uma função que verifica se o usuário está autorizado a acessar determinadas rotas, ou um middleware para realizar upload de arquivos antes de enviar as informações preenchidas em um formulário.
+
+5. O ORM proporciona uma abstração maior, tornando o desenvolvimento de aplicações mais rápidas e fáceis de compreender, em contrapartida, o desempenho pode ser menor comparada ao query builder devido ao processo de conversão do código de OOP para instruções SQL.
+Já o query builder é mais performático e possui maior controle sobre as instruções SQL geradas, por não ser geradas automaticamente igual ao ORM. Porém, resulta em um código um pouco maior e mais complexo por estar lidando com as instruções SQL mais diretamente.
+
+6. 
+SELECT DISTINCT 
+    LEAST(j1.nome, j2.nome) AS jogador1, 
+    GREATEST(j1.nome, j2.nome) AS jogador2
+FROM Partidas p
+JOIN Jogador j1 ON p.jogador1_id = j1.id
+JOIN Jogador j2 ON p.jogador2_id = j2.id
+WHERE (p.pontos_jogador1 + p.pontos_jogador2) > 30
+  AND p.duracao > 90
+GROUP BY LEAST(j1.nome, j2.nome), GREATEST(j1.nome, j2.nome)
+HAVING COUNT(*) > 2;
