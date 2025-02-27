@@ -2,6 +2,8 @@
 
 Este repositório contém o código-fonte de um teste técnico para a empresa Coopercarga. O projeto foi desenvolvido utilizando **React**, **Vite** e **Bootstrap**.
 
+- **As respostas das perguntas feitas estão na pasta 'Lista de Perguntas' na raiz do projeto**
+
 ## Rodando o Projeto Localmente
 
 Para rodar o projeto em sua máquina local, siga os passos abaixo:
