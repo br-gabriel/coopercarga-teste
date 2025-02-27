@@ -13,7 +13,7 @@ export function GetContextProvider({ children }) {
       .then((data) => setProducts(data));
   }, []);
 
-  const mapCategoryName = (categoryName) => {
+  const filterCategoryName = (categoryName) => {
     switch (categoryName) {
       case "Camisetas":
         return "Camiseta";
@@ -49,7 +49,7 @@ export function GetContextProvider({ children }) {
         products,
         selectedProduct,
         setSelectedProduct,
-        mapCategoryName,
+        filterCategoryName,
         formatCategoryName,
       }}
     >
