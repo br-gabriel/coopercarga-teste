@@ -4,16 +4,16 @@ import { GetContext } from "../context/getContext";
 import PropTypes from 'prop-types';
 
 export const GridProducts = ({ categoryName }) => {
-  const { products, mapCategoryName } = useContext(GetContext);
+  const { products, filterCategoryName } = useContext(GetContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    const mappedCategoryName = mapCategoryName(categoryName);
+    const mappedCategoryName = filterCategoryName(categoryName);
     const filtered = products.filter(
       (product) => product.type === mappedCategoryName
     );
     setFilteredProducts(filtered);
-  }, [categoryName, products, mapCategoryName]);
+  }, [categoryName, products, filterCategoryName]);
 
   return (
     <div className="col-12 col-md-9">
