@@ -1,0 +1,18 @@
+.half-width-card {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.quantity-controls {
+  width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  padding-left: 12px;
+  margin-bottom: 25px;
+}
+
+.quantity-controls button {
+  margin: 0 10px;
+}
