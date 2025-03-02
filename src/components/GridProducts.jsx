@@ -8,11 +8,12 @@ export const GridProducts = ({ categoryName }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    const mappedCategoryName = filterCategoryName(categoryName);
-    const filtered = products.filter(
-      (product) => product.type === mappedCategoryName
-    );
-    setFilteredProducts(filtered);
+    const apiUrl = import.meta.env.VITE_API_URL
+
+    const filteredCategoryName = filterCategoryName(categoryName);
+    fetch(`${apiUrl}/products/type/${filteredCategoryName}`)
+      .then((response) => response.json())
+      .then((data) => setFilteredProducts(data));
   }, [categoryName, products, filterCategoryName]);
 
   return (
