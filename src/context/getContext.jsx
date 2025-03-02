@@ -8,7 +8,9 @@ export function GetContextProvider({ children }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch("/data.json")
+    const apiUrl = import.meta.env.VITE_API_URL
+
+    fetch(`${apiUrl}/allproducts`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
